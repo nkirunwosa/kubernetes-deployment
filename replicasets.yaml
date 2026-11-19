@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: foodmart-replicaset
+  labels:
+    app: foodmart
+    
+spec:
+  # modify replicas according to your case
+  replicas: 3
+  selector:
+  template:
+    metadata:
+      labels:
+        app: foodmart 1
+    spec:
+      containers:
+      - name: foodmart
+        image: nkirucloud/foodmart:latest

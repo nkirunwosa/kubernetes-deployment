@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: foodmart-pod
+spec:
+  containers:
+  - name: foodmart
+    image: nkirucloud/foodmart:latest
+    ports:
+    - containerPort: 80

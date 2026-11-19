@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foodmart-deployment
+  labels:
+    app: foodmart
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: foodmart
+  template:
+    metadata:
+      labels:
+        app: foodmart
+    spec:
+      containers:
+      - name: foodmart
+        image: nkirucloud/foodmart:latest
+        ports:
+        - containerPort: 80
